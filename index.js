@@ -1,3 +1,6 @@
+const body = document.getElementById('body');
+const h1 = document.querySelector('h1');
+
 /////////////////////BOTONES HEADER////////////////
 const header = document.getElementById("header");
 //boton imagen
@@ -215,3 +218,142 @@ btnSinTextoBottom.addEventListener('click', () => {
 });
 
 //cambiar la fuente
+buttonFuentesText.addEventListener('change', (e) => {
+    for (let i = 0; i < textosMeme.length; i++) {
+        textosMeme[i].style.fontFamily = `${buttonFuentesText.value}`;
+    }
+});
+
+//cambiar tamaño fuente
+
+tamañoFuenteTextOptions.addEventListener('change', (e) => {
+    for (let i = 0; i < textosMeme.length; i++) {
+        textosMeme[i].style.fontSize = `${tamañoFuenteTextOptions.value}px`;
+
+    }
+});
+
+//alinear texto
+buttonLeftTextOptions.addEventListener('click', () => {
+    for (let i = 0; i < textosMeme.length; i++) {
+        textosMeme[i].style.textAlign = 'left';
+    }
+
+});
+buttonCenterTextOptions.addEventListener('click', () => {
+    for (let i = 0; i < textosMeme.length; i++) {
+        textosMeme[i].style.textAlign = 'center';
+    }
+
+});
+buttonRightTextOptions.addEventListener('click', () => {
+    for (let i = 0; i < textosMeme.length; i++) {
+        textosMeme[i].style.textAlign = 'right';
+    }
+
+});
+
+//color texto
+
+inputColorTexto.addEventListener('input', () => {
+    for (let i = 0; i < textosMeme.length; i++) {
+        textosMeme[i].style.color = `${inputColorTexto.value}`;
+    }
+
+});
+
+//color fondo texto 
+
+inputColorFondoTexto.addEventListener('input', () => {
+    for (let i = 0; i < textosMeme.length; i++) {
+        textosMeme[i].style.backgroundColor = `${inputColorFondoTexto.value}`;
+    }
+
+});
+
+//fondo transparente
+
+transparentTextOption.addEventListener('change', (e) => {
+    for (let i = 0; i < textosMeme.length; i++) {
+        if (transparentTextOption.checked) {
+            textosMeme[i].style.backgroundColor = `transparent`;
+        } else if (!transparentTextOption.checked) {
+            textosMeme[i].style.backgroundColor = `beige`;
+        }
+
+    }
+
+});
+
+//contorno de letra
+//claro
+buttonClaroTextOptions.addEventListener('click', (e) => {
+    for (let i = 0; i < textosMeme.length; i++) {
+        textosMeme[i].style.webkitTextStroke = `1px white`;
+    }
+});
+//oscuro
+buttonOscuroTextOptions.addEventListener('click', (e) => {
+    for (let i = 0; i < textosMeme.length; i++) {
+        textosMeme[i].style.webkitTextStroke = `1px black`;
+
+    }
+});
+//ninguno
+buttonNingunoTextOptions.addEventListener('click', (e) => {
+    for (let i = 0; i < textosMeme.length; i++) {
+        textosMeme[i].style.webkitTextStroke = `1px transparent`;
+
+    }
+});
+
+//espaciado
+
+espaciadoTextOptions.addEventListener('change', () => {
+    for (let i = 0; i < textosMeme.length; i++) {
+        textosMeme[i].style.letterSpacing = `${espaciadoTextOptions.value}px`
+
+    }
+});
+
+//interlineado
+
+interlineadoTextOptions.addEventListener('click', () => {
+    for (let i = 0; i < textosMeme.length; i++) {
+        textosMeme[i].style.lineHeight = `${espaciadoTextOptions.value}px`
+
+    }
+});
+
+//descargar meme
+
+const descargarMeme =
+    btnDescargaMeme.addEventListener('click', () => {
+        domtoimage.toBlob(boxMeme).then(function(blob) {
+            saveAs(blob, 'mi-meme.png')
+        })
+    });
+
+
+//modo oscuro
+const botones = document.querySelectorAll('.boton');
+const titulos = document.querySelectorAll('.titulos');
+
+btnModoOscuro.addEventListener('click', () => {
+    for (let index = 0; index < botones.length; index++) {
+        botones[index].classList.toggle('dark-mode-inverse');
+    }
+    for (let index = 0; index < titulos.length; index++) {
+        titulos[index].classList.toggle('dark-mode');
+    }
+    for (let index = 0; index < textosMeme.length; index++) {
+        textosMeme[index].classList.toggle('dark-mode');
+        textosMeme[index].style.border = '0.5px solid white';
+    }
+    header.classList.toggle('dark-mode');
+    header.style.border = '0.5px solid white';
+    aside.classList.toggle('dark-mode');
+    aside.style.border = '0.5px solid white';
+    main.classList.toggle('dark-mode');
+    imgMeme.style.backgroundColor = 'white';
+})

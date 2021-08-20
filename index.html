@@ -6,14 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
     <title>Generador de MEMES</title>
 </head>
 
-<body>
+<body class="ligth-mode-blanco">
     <!-- ///////////////////////////// HEADER ///////////////////////////// -->
 
-    <header id="header">
-        <h1 class="titulo">Generador de Memes</h1>
+    <header id="header" class="ligth-mode-beige">
+        <h1 class="titulo titulos">Generador de Memes</h1>
         <div class="botonera">
             <button class="boton abrir-panel" id="boton-imagen">Imagen</button>
             <button class="boton abrir-panel" id="boton-texto">Texto</button>
@@ -25,11 +27,11 @@
 
         <div class="contain-meme">
 
-            <div class="text" id="top-text">TOP TEXT</div>
+            <div class="text ligth-mode-beige" id="top-text">TOP TEXT</div>
 
-            <div class="imagen-meme"></div>
+            <div class="imagen-meme ligth-mode-blanco"></div>
 
-            <div class="text" id="bottom-text">BOTTOM TEXT</div>
+            <div class="text ligth-mode-beige" id="bottom-text">BOTTOM TEXT</div>
 
         </div>
 
@@ -39,19 +41,19 @@
         <!-- ///////////////////////////// ASIDE ///////////////////////////// -->
 
 
-        <aside class="aside" id="aside">
+        <aside class="aside ligth-mode-aside" id="aside">
 
             <!-- ///////////////////////////// SECCION IMAGEN ///////////////////////////// -->
 
             <section class="" id="section-imagen">
 
-                <h2 class="">IMAGEN</h2>
+                <h2 class="titulos">IMAGEN</h2>
 
                 <div class="">
-                    <h3 class="">URL</h3>
+                    <h3 class="titulos">URL</h3>
                     <input type="url" name="url" id="url-img-options" class="url-img-options" aria-label="Url de imagen">
                 </div>
-                <h3 class="">Fondo</h3>
+                <h3 class="titulos">Fondo</h3>
 
                 <div class="fondo-options">
                     <div class="div-color-fondo" id="color-fondo-img">
@@ -73,7 +75,7 @@
 
 
                 <div class="">
-                    <h2>Filtros</h2>
+                    <h2 class="titulos">Filtros</h2>
 
                     <div class="" id="box-filtros">
                         <label for="brillo" class="label-filtros-img">Brillo</label>
@@ -125,7 +127,7 @@
             </section>
             <!-- /////////////////////////////SECCION TEXTO///////////////////////////// -->
             <section class="none" id="seccion-texto">
-                <h2 class="">TEXTO</h2>
+                <h2 class="titulos">TEXTO</h2>
 
 
                 <div class="box-text-options">
@@ -148,7 +150,7 @@
 
 
                 <div class="box-text-options">
-                    <h2 class="" id="title-fuente-dark">FUENTE</h2>
+                    <h2 class="titulos" id="title-fuente-dark">FUENTE</h2>
                 </div>
                 <div class="">
                     <select class="" id="button-fuentes-text" aria-label="opciones de fuentes">
@@ -183,7 +185,7 @@
                 <div class="">
                     <div class="contain-color-fondo">
                         <div class="box-text-options">
-                            <h4 class="">COLOR</h4>
+                            <h4 class="titulos">COLOR</h4>
                             <div class="">
                                 <input type="color" name="button-color-text" value="#000000" aria-label="Color de texto" class="" id="input-color-texto">
                                 <span class="span-color" id="color-text-options">#000000</span>
@@ -192,7 +194,7 @@
 
 
                         <div class="box-text-options">
-                            <h4 class="">FONDO</h4>
+                            <h4 class="titulos">FONDO</h4>
                             <div class="">
                                 <input type="color" name="button-fondo-text" value="#ffffff" aria-label="Color de fondo de texto" class="" id="input-color-fondo-texto">
                                 <span class="span-color" id="fondo-text-options">#ffffff</span>
@@ -208,7 +210,7 @@
 
 
                 <div class="box-text-options">
-                    <h3 class="">CONTORNO</h3>
+                    <h3 class="titulos">CONTORNO</h3>
                     <div class="botones-centrados">
                         <button class="boton texto-boton" id="button-ninguno-text-options">Ninguno</button>
                         <button class="boton texto-boton" id="button-claro-text-options">Claro</button>
@@ -217,12 +219,12 @@
                 </div>
 
                 <div class="box-text-options">
-                    <h3 class="">ESPACIADO</h3>
+                    <h3 class="titulos">ESPACIADO</h3>
                     <input type="number" class="" id="espaciado-text-options" min="10" max="50" value="35" aria-label="Espaciado">
                 </div>
 
                 <div class="box-text-options">
-                    <h3 class="">INTERLINEADO</h3>
+                    <h3 class="titulos">INTERLINEADO</h3>
                     <select class="" id="interlineado-text-options" aria-label="Interlineado">
                         <option value="0.8">0.8</option>
                         <option value="1">1</option>
